@@ -74,9 +74,19 @@ namespace S8SeatChange
         //image.Save(@"C:\temp\~~.jpg", ImageFormat.Jpeg);
 
 
+        public string[] arr = {
+
+        };
+        
+        
         private void FrmMain_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFile.ShowDialog();
         }
     }
 }
