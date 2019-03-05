@@ -88,5 +88,36 @@ namespace S8SeatChange
         {
             openFile.ShowDialog();
         }
+
+        bool isDrag = false;
+        Point mousePos;
+        //Point 
+
+        private void FrmMain_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDrag = true;
+                mousePos = e.Location;
+            }
+        }
+
+        private void FrmMain_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDrag)
+            {
+                Point temp = new Point(this.Location.X + e.Location.X - mousePos.X, this.Location.Y + e.Location.Y - mousePos.Y);
+                this.Location = temp;
+            }
+
+        }
+
+        private void FrmMain_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDrag = false;
+            }
+        }
     }
 }
