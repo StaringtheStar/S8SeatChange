@@ -76,6 +76,8 @@ namespace S8SeatChange
 
         public string[] arr = {
 
+
+
         };
         
         
@@ -117,6 +119,38 @@ namespace S8SeatChange
             if (e.Button == MouseButtons.Left)
             {
                 isDrag = false;
+            }
+        }
+        
+        
+
+
+        public void ApplytoTextbox()
+        {
+            string[] str = System.IO.File.ReadAllText("Classmates.txt").Split('\n');
+            MessageBox.Show(str[1]);
+            MessageBox.Show(str.Length.ToString());
+            MessageBox.Show(str[str.Length-1]);
+
+        }
+
+        private void btnInitTxt_Click(object sender, EventArgs e)
+        {
+            string directory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
+            System.IO.File.WriteAllText("Classmates.txt", Properties.Resources.S8InitNames);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (System.IO.File.Exists("Classmates.txt"))
+            {
+                MessageBox.Show("Yay");
+                ApplytoTextbox();
             }
         }
     }
