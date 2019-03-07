@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.openFile = new System.Windows.Forms.OpenFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox01 = new System.Windows.Forms.TextBox();
+            this.textBox02 = new System.Windows.Forms.TextBox();
+            this.textBox03 = new System.Windows.Forms.TextBox();
+            this.textBox04 = new System.Windows.Forms.TextBox();
+            this.textBox05 = new System.Windows.Forms.TextBox();
+            this.textBox06 = new System.Windows.Forms.TextBox();
+            this.textBox07 = new System.Windows.Forms.TextBox();
+            this.textBox08 = new System.Windows.Forms.TextBox();
+            this.textBox09 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -65,12 +65,13 @@
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChangeSeat = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnInitTxt = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.asdf = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // openFile
@@ -78,96 +79,96 @@
             this.openFile.Filter = "텍스트 파일(*.txt)|*.txt";
             this.openFile.Title = "S8";
             // 
-            // textBox1
+            // textBox01
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(98, 231);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 29);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "김김김";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox01.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox01.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox01.Location = new System.Drawing.Point(98, 231);
+            this.textBox01.Name = "textBox01";
+            this.textBox01.Size = new System.Drawing.Size(75, 29);
+            this.textBox01.TabIndex = 0;
+            this.textBox01.Text = "김김김";
+            this.textBox01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // textBox02
             // 
-            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(179, 231);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(75, 29);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "김김김";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox02.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox02.Location = new System.Drawing.Point(179, 231);
+            this.textBox02.Name = "textBox02";
+            this.textBox02.Size = new System.Drawing.Size(75, 29);
+            this.textBox02.TabIndex = 1;
+            this.textBox02.Text = "김김김";
+            this.textBox02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // textBox03
             // 
-            this.textBox3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(260, 231);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(75, 29);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "김김김";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox03.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox03.Location = new System.Drawing.Point(260, 231);
+            this.textBox03.Name = "textBox03";
+            this.textBox03.Size = new System.Drawing.Size(75, 29);
+            this.textBox03.TabIndex = 2;
+            this.textBox03.Text = "김김김";
+            this.textBox03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox4
+            // textBox04
             // 
-            this.textBox4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(98, 266);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(75, 29);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.Text = "김김김";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox04.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox04.Location = new System.Drawing.Point(98, 266);
+            this.textBox04.Name = "textBox04";
+            this.textBox04.Size = new System.Drawing.Size(75, 29);
+            this.textBox04.TabIndex = 3;
+            this.textBox04.Text = "김김김";
+            this.textBox04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox5
+            // textBox05
             // 
-            this.textBox5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(179, 266);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(75, 29);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.Text = "김김김";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox05.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox05.Location = new System.Drawing.Point(179, 266);
+            this.textBox05.Name = "textBox05";
+            this.textBox05.Size = new System.Drawing.Size(75, 29);
+            this.textBox05.TabIndex = 4;
+            this.textBox05.Text = "김김김";
+            this.textBox05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox6
+            // textBox06
             // 
-            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox6.Location = new System.Drawing.Point(260, 266);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(75, 29);
-            this.textBox6.TabIndex = 5;
-            this.textBox6.Text = "김김김";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox06.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox06.Location = new System.Drawing.Point(260, 266);
+            this.textBox06.Name = "textBox06";
+            this.textBox06.Size = new System.Drawing.Size(75, 29);
+            this.textBox06.TabIndex = 5;
+            this.textBox06.Text = "김김김";
+            this.textBox06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox7
+            // textBox07
             // 
-            this.textBox7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox7.Location = new System.Drawing.Point(98, 301);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(75, 29);
-            this.textBox7.TabIndex = 6;
-            this.textBox7.Text = "김김김";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox07.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox07.Location = new System.Drawing.Point(98, 301);
+            this.textBox07.Name = "textBox07";
+            this.textBox07.Size = new System.Drawing.Size(75, 29);
+            this.textBox07.TabIndex = 6;
+            this.textBox07.Text = "김김김";
+            this.textBox07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox8
+            // textBox08
             // 
-            this.textBox8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.Location = new System.Drawing.Point(179, 301);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(75, 29);
-            this.textBox8.TabIndex = 7;
-            this.textBox8.Text = "김김김";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox08.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox08.Location = new System.Drawing.Point(179, 301);
+            this.textBox08.Name = "textBox08";
+            this.textBox08.Size = new System.Drawing.Size(75, 29);
+            this.textBox08.TabIndex = 7;
+            this.textBox08.Text = "김김김";
+            this.textBox08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox9
+            // textBox09
             // 
-            this.textBox9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox9.Location = new System.Drawing.Point(260, 301);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(75, 29);
-            this.textBox9.TabIndex = 8;
-            this.textBox9.Text = "김김김";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox09.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox09.Location = new System.Drawing.Point(260, 301);
+            this.textBox09.Name = "textBox09";
+            this.textBox09.Size = new System.Drawing.Size(75, 29);
+            this.textBox09.TabIndex = 8;
+            this.textBox09.Text = "김김김";
+            this.textBox09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox10
             // 
@@ -439,18 +440,19 @@
             this.textBox36.Text = "김김김";
             this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // btnChangeSeat
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(677, 495);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 38);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "자리 바꾸기";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnChangeSeat.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnChangeSeat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnChangeSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeSeat.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnChangeSeat.Location = new System.Drawing.Point(677, 495);
+            this.btnChangeSeat.Name = "btnChangeSeat";
+            this.btnChangeSeat.Size = new System.Drawing.Size(135, 38);
+            this.btnChangeSeat.TabIndex = 36;
+            this.btnChangeSeat.Text = "자리 바꾸기";
+            this.btnChangeSeat.UseVisualStyleBackColor = true;
+            this.btnChangeSeat.Click += new System.EventHandler(this.btnChangeSeat_Click);
             // 
             // button2
             // 
@@ -516,17 +518,26 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // asdf
+            // 
+            this.asdf.Location = new System.Drawing.Point(703, 106);
+            this.asdf.Multiline = true;
+            this.asdf.Name = "asdf";
+            this.asdf.Size = new System.Drawing.Size(231, 293);
+            this.asdf.TabIndex = 42;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 570);
+            this.Controls.Add(this.asdf);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnInitTxt);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnChangeSeat);
             this.Controls.Add(this.textBox19);
             this.Controls.Add(this.textBox20);
             this.Controls.Add(this.textBox21);
@@ -554,15 +565,15 @@
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox09);
+            this.Controls.Add(this.textBox08);
+            this.Controls.Add(this.textBox07);
+            this.Controls.Add(this.textBox06);
+            this.Controls.Add(this.textBox05);
+            this.Controls.Add(this.textBox04);
+            this.Controls.Add(this.textBox03);
+            this.Controls.Add(this.textBox02);
+            this.Controls.Add(this.textBox01);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMain";
             this.Text = "S8";
@@ -577,15 +588,15 @@
 
         #endregion
         private System.Windows.Forms.OpenFileDialog openFile;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox01;
+        private System.Windows.Forms.TextBox textBox02;
+        private System.Windows.Forms.TextBox textBox03;
+        private System.Windows.Forms.TextBox textBox04;
+        private System.Windows.Forms.TextBox textBox05;
+        private System.Windows.Forms.TextBox textBox06;
+        private System.Windows.Forms.TextBox textBox07;
+        private System.Windows.Forms.TextBox textBox08;
+        private System.Windows.Forms.TextBox textBox09;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
@@ -613,12 +624,13 @@
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.TextBox textBox35;
         private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChangeSeat;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnInitTxt;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox asdf;
     }
 }
 
