@@ -17,9 +17,9 @@ namespace S8SeatChange
         public FrmMain()
         {
             InitializeComponent();
-            this.Icon = S8SeatChange.Properties.Resources.S8;
         }
 
+        //ScreenCapture Class
         //From https://stackoverflow.com/a/24879511
         //By Christian Moser
         
@@ -69,29 +69,25 @@ namespace S8SeatChange
             }
         }
 
-        //use as below:
+        //Usage:
         //var image=ScreenCapture.CaptureActiveWindow();
+        //(CaptureDesktop: 전체 스크린)
         //image.Save(@"C:\temp\~~.jpg", ImageFormat.Jpeg);
-        
-        public string[] arr = {
-
-
-
-        };
         
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+            var result = MessageBox.Show(
+                "자리 배치를 초기화하려면 예, 전에 저장된 배치를 불러오려면 아니오를 클릭해주세요.",
+                "S8SeatChange",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes) InitialText();
+            //MessageBox message = new MessageBox(2343, 52);
         }
+        
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openFile.ShowDialog();
-        }
-
+        /*================Form DragEnabling=================*/
         bool isDrag = false;
         Point mousePos;
-        //Point 
 
         private void FrmMain_MouseDown(object sender, MouseEventArgs e)
         {
@@ -114,42 +110,17 @@ namespace S8SeatChange
 
         private void FrmMain_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                isDrag = false;
-            }
+            if (e.Button == MouseButtons.Left) isDrag = false;
         }
 
+        /*==============================================*/
 
-
-
-        public void ApplytoTextbox()
-        {
-            string[] str = System.IO.File.ReadAllText("Classmates.txt").Split('\n');
-            MessageBox.Show(str[1]);
-            MessageBox.Show(str.Length.ToString());
-            MessageBox.Show(str[str.Length - 1]);
-
-        }
-
-        private void btnInitTxt_Click(object sender, EventArgs e)
-        {
-            string directory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
-            System.IO.File.WriteAllText("Classmates.txt", Properties.Resources.S8InitNames);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
+        private void btnInitTxt_Click(object sender, EventArgs e) { InitialText(); }
+        
         private void button5_Click(object sender, EventArgs e)
         {
-            if (System.IO.File.Exists("Classmates.txt"))
-            {
-                MessageBox.Show("Yay");
-                ApplytoTextbox();
-            }
+            if (System.IO.File.Exists("Classmates.txt")) ApplytoTextbox();
+            else MessageBox.Show("저장된 배치가 없습니다!");
         }
         
         private void btnChangeSeat_Click(object sender, EventArgs e)
@@ -229,12 +200,167 @@ namespace S8SeatChange
                 }
             }
 
-            List<string> NewNames = new List<string>();
-            for (i = 0; i < 36; i++) NewNames.Add(nameslist[order[i]]);
-
+            for (i = 0; i < 36; i++) textBoxes[i].Text = nameslist[order[i]];
             
-            string str = string.Empty;
-            for (i = 0; i < 36; i++) str += (order[i].ToString() + "\n");
         }
+
+        private void TextSave(object sender, EventArgs e) { SaveAsText(); }
+
+        void InitialText()
+        {
+            if (System.IO.File.Exists("Classmates.txt"))
+            {
+                var result = MessageBox.Show("기존에 저장된 배치가 존재합니다. 덮어씌우시겠습니까?", "S8SeatChange", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+                if (result == DialogResult.No) return;
+            }
+            System.IO.File.WriteAllText("Classmates.txt", Properties.Resources.S8InitNames);
+        }
+
+        void OpenText()
+        {
+            if (System.IO.File.Exists("Classmates.txt")) ApplytoTextbox();
+            else MessageBox.Show("저장된 배치가 없습니다!", "S8SeatChange", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        void ApplytoTextbox()
+        {
+            List<TextBox> textBoxes = new List<TextBox>
+            {
+                textBox01,
+                textBox02,
+                textBox03,
+                textBox04,
+                textBox05,
+                textBox06,
+                textBox07,
+                textBox08,
+                textBox09,
+                textBox10,
+                textBox11,
+                textBox12,
+                textBox13,
+                textBox14,
+                textBox15,
+                textBox16,
+                textBox17,
+                textBox18,
+                textBox19,
+                textBox20,
+                textBox21,
+                textBox22,
+                textBox23,
+                textBox24,
+                textBox25,
+                textBox26,
+                textBox27,
+                textBox28,
+                textBox29,
+                textBox30,
+                textBox31,
+                textBox32,
+                textBox33,
+                textBox34,
+                textBox35,
+                textBox36
+            };
+            //textBox01~textBox36
+
+            string[] str = System.IO.File.ReadAllText("Classmates.txt").Split('\n');
+            short i;
+            for (i = 0; i < 36; i++)
+            {
+                if (str[i] != String.Empty) textBoxes[i].Text = str[i];
+                else textBoxes[i].Text = string.Empty;
+            }
+        }
+
+
+
+
+
+
+
+
+        void SaveAsText()
+        {
+            List<TextBox> textBoxes = new List<TextBox>
+            {
+                textBox01,
+                textBox02,
+                textBox03,
+                textBox04,
+                textBox05,
+                textBox06,
+                textBox07,
+                textBox08,
+                textBox09,
+                textBox10,
+                textBox11,
+                textBox12,
+                textBox13,
+                textBox14,
+                textBox15,
+                textBox16,
+                textBox17,
+                textBox18,
+                textBox19,
+                textBox20,
+                textBox21,
+                textBox22,
+                textBox23,
+                textBox24,
+                textBox25,
+                textBox26,
+                textBox27,
+                textBox28,
+                textBox29,
+                textBox30,
+                textBox31,
+                textBox32,
+                textBox33,
+                textBox34,
+                textBox35,
+                textBox36
+            };
+            //textBox01~textBox36
+
+            string str = string.Empty;
+            foreach (TextBox items in textBoxes)
+            {
+                str += items.Text + "\n";
+            }
+            System.IO.File.WriteAllText("Classmates.txt", str);
+
+        }
+
+        void SaveAsImage()
+        {
+
+
+
+
+
+
+        }
+
+        private void CloseForm(object sender, EventArgs e) { this.Close(); }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show("배치 저장은 하셨습니까?", "S8SeatChange", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+            if (result == DialogResult.Yes) Application.Exit();
+            else e.Cancel=true;
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e) { OpenText(); }
+
+        private void 배치불러오기OToolStripMenuItem_Click(object sender, EventArgs e) { OpenText(); }
+
+        private void 배치초기화RToolStripMenuItem_Click(object sender, EventArgs e) { InitialText(); }
+
+        private void 텍스트로저장SToolStripMenuItem_Click(object sender, EventArgs e) { SaveAsText(); }
+
+        private void 이미지로저장IToolStripMenuItem_Click(object sender, EventArgs e) { SaveAsImage(); }
+        
     }
 }

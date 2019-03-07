@@ -83,5 +83,11 @@
   <ItemGroup>
     <None Include="Resources\S8.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgInfo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

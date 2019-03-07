@@ -61,6 +61,26 @@ namespace S8SeatChange.Properties {
         }
         
         /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgClose {
+            get {
+                object obj = ResourceManager.GetObject("imgClose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgInfo {
+            get {
+                object obj = ResourceManager.GetObject("imgInfo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.Drawing.Icon S8 {
@@ -103,7 +123,10 @@ namespace S8SeatChange.Properties {
         ///조태영
         ///조현규
         ///홍수정
-        ///황채연과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///황채연
+        ///
+        ///
+        ///과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string S8InitNames {
             get {
