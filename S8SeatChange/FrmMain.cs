@@ -77,7 +77,7 @@ namespace S8SeatChange
         private void FrmMain_Load(object sender, EventArgs e)
         {
             this.Focus();
-            btnChangeSeat.Focus();
+            //btnChangeSeat.Focus();
             if (!System.IO.File.Exists("Classmates.txt")) InitialText();
             ApplytoTextbox();
             //MessageBox message = new MessageBox(2343, 52);

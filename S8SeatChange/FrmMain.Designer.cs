@@ -32,10 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.btnChangeSeat = new System.Windows.Forms.Button();
-            this.btnImageSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.btnTextSave = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +81,7 @@
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.tmrFadeIn = new System.Windows.Forms.Timer(this.components);
             this.tmrFadeOut = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,28 +97,13 @@
             this.btnChangeSeat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnChangeSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeSeat.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnChangeSeat.Location = new System.Drawing.Point(237, 364);
+            this.btnChangeSeat.Location = new System.Drawing.Point(474, 349);
             this.btnChangeSeat.Name = "btnChangeSeat";
             this.btnChangeSeat.Size = new System.Drawing.Size(114, 38);
             this.btnChangeSeat.TabIndex = 0;
             this.btnChangeSeat.Text = "자리 바꾸기";
             this.btnChangeSeat.UseVisualStyleBackColor = false;
             this.btnChangeSeat.Click += new System.EventHandler(this.btnChangeSeat_Click);
-            // 
-            // btnImageSave
-            // 
-            this.btnImageSave.BackColor = System.Drawing.SystemColors.Control;
-            this.btnImageSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.btnImageSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnImageSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImageSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnImageSave.Location = new System.Drawing.Point(487, 364);
-            this.btnImageSave.Name = "btnImageSave";
-            this.btnImageSave.Size = new System.Drawing.Size(124, 38);
-            this.btnImageSave.TabIndex = 37;
-            this.btnImageSave.Text = "이미지로 저장";
-            this.btnImageSave.UseVisualStyleBackColor = false;
-            this.btnImageSave.Click += new System.EventHandler(this.btnImageSave_Click);
             // 
             // btnClose
             // 
@@ -129,9 +113,9 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.Image = global::S8SeatChange.Properties.Resources.imgClose;
-            this.btnClose.Location = new System.Drawing.Point(548, 0);
+            this.btnClose.Location = new System.Drawing.Point(540, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 40);
+            this.btnClose.Size = new System.Drawing.Size(36, 36);
             this.btnClose.TabIndex = 40;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.CloseForm);
@@ -143,28 +127,13 @@
             this.btnOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpen.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.btnOpen.Location = new System.Drawing.Point(105, 364);
+            this.btnOpen.Location = new System.Drawing.Point(342, 349);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(126, 38);
             this.btnOpen.TabIndex = 41;
             this.btnOpen.Text = "다시 불러오기";
             this.btnOpen.UseVisualStyleBackColor = false;
             this.btnOpen.Click += new System.EventHandler(this.ReOpen);
-            // 
-            // btnTextSave
-            // 
-            this.btnTextSave.BackColor = System.Drawing.SystemColors.Control;
-            this.btnTextSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.btnTextSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnTextSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTextSave.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.btnTextSave.Location = new System.Drawing.Point(357, 364);
-            this.btnTextSave.Name = "btnTextSave";
-            this.btnTextSave.Size = new System.Drawing.Size(124, 38);
-            this.btnTextSave.TabIndex = 43;
-            this.btnTextSave.Text = "텍스트로 저장";
-            this.btnTextSave.UseVisualStyleBackColor = false;
-            this.btnTextSave.Click += new System.EventHandler(this.TextSave);
             // 
             // btnInfo
             // 
@@ -174,9 +143,9 @@
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
-            this.btnInfo.Location = new System.Drawing.Point(487, 0);
+            this.btnInfo.Location = new System.Drawing.Point(498, 2);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(40, 40);
+            this.btnInfo.Size = new System.Drawing.Size(36, 36);
             this.btnInfo.TabIndex = 44;
             this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
@@ -392,7 +361,7 @@
             this.textBox15.MaxLength = 5;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(75, 29);
-            this.textBox15.TabIndex = 12;
+            this.textBox15.TabIndex = 14;
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox14
@@ -412,7 +381,7 @@
             this.textBox13.MaxLength = 5;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(75, 29);
-            this.textBox13.TabIndex = 14;
+            this.textBox13.TabIndex = 12;
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox18
@@ -422,7 +391,7 @@
             this.textBox18.MaxLength = 5;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(75, 29);
-            this.textBox18.TabIndex = 15;
+            this.textBox18.TabIndex = 17;
             this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox17
@@ -442,7 +411,7 @@
             this.textBox16.MaxLength = 5;
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(75, 29);
-            this.textBox16.TabIndex = 17;
+            this.textBox16.TabIndex = 15;
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox36
@@ -452,7 +421,7 @@
             this.textBox36.MaxLength = 5;
             this.textBox36.Name = "textBox36";
             this.textBox36.Size = new System.Drawing.Size(75, 29);
-            this.textBox36.TabIndex = 18;
+            this.textBox36.TabIndex = 35;
             this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox35
@@ -462,7 +431,7 @@
             this.textBox35.MaxLength = 5;
             this.textBox35.Name = "textBox35";
             this.textBox35.Size = new System.Drawing.Size(75, 29);
-            this.textBox35.TabIndex = 19;
+            this.textBox35.TabIndex = 34;
             this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox34
@@ -472,7 +441,7 @@
             this.textBox34.MaxLength = 5;
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(75, 29);
-            this.textBox34.TabIndex = 20;
+            this.textBox34.TabIndex = 33;
             this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox33
@@ -482,7 +451,7 @@
             this.textBox33.MaxLength = 5;
             this.textBox33.Name = "textBox33";
             this.textBox33.Size = new System.Drawing.Size(75, 29);
-            this.textBox33.TabIndex = 21;
+            this.textBox33.TabIndex = 32;
             this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox32
@@ -492,7 +461,7 @@
             this.textBox32.MaxLength = 5;
             this.textBox32.Name = "textBox32";
             this.textBox32.Size = new System.Drawing.Size(75, 29);
-            this.textBox32.TabIndex = 22;
+            this.textBox32.TabIndex = 31;
             this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox31
@@ -502,7 +471,7 @@
             this.textBox31.MaxLength = 5;
             this.textBox31.Name = "textBox31";
             this.textBox31.Size = new System.Drawing.Size(75, 29);
-            this.textBox31.TabIndex = 23;
+            this.textBox31.TabIndex = 30;
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox30
@@ -512,7 +481,7 @@
             this.textBox30.MaxLength = 5;
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(75, 29);
-            this.textBox30.TabIndex = 24;
+            this.textBox30.TabIndex = 29;
             this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox29
@@ -522,7 +491,7 @@
             this.textBox29.MaxLength = 5;
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(75, 29);
-            this.textBox29.TabIndex = 25;
+            this.textBox29.TabIndex = 28;
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox28
@@ -532,7 +501,7 @@
             this.textBox28.MaxLength = 5;
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(75, 29);
-            this.textBox28.TabIndex = 26;
+            this.textBox28.TabIndex = 27;
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox27
@@ -542,7 +511,7 @@
             this.textBox27.MaxLength = 5;
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(75, 29);
-            this.textBox27.TabIndex = 27;
+            this.textBox27.TabIndex = 26;
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox26
@@ -552,7 +521,7 @@
             this.textBox26.MaxLength = 5;
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(75, 29);
-            this.textBox26.TabIndex = 28;
+            this.textBox26.TabIndex = 25;
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox25
@@ -562,7 +531,7 @@
             this.textBox25.MaxLength = 5;
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(75, 29);
-            this.textBox25.TabIndex = 29;
+            this.textBox25.TabIndex = 24;
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox24
@@ -572,7 +541,7 @@
             this.textBox24.MaxLength = 5;
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(75, 29);
-            this.textBox24.TabIndex = 30;
+            this.textBox24.TabIndex = 23;
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox23
@@ -582,7 +551,7 @@
             this.textBox23.MaxLength = 5;
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(75, 29);
-            this.textBox23.TabIndex = 31;
+            this.textBox23.TabIndex = 22;
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox22
@@ -592,7 +561,7 @@
             this.textBox22.MaxLength = 5;
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(75, 29);
-            this.textBox22.TabIndex = 32;
+            this.textBox22.TabIndex = 21;
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox21
@@ -602,7 +571,7 @@
             this.textBox21.MaxLength = 5;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(75, 29);
-            this.textBox21.TabIndex = 33;
+            this.textBox21.TabIndex = 20;
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox20
@@ -612,7 +581,7 @@
             this.textBox20.MaxLength = 5;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(75, 29);
-            this.textBox20.TabIndex = 34;
+            this.textBox20.TabIndex = 19;
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox19
@@ -622,7 +591,7 @@
             this.textBox19.MaxLength = 5;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(75, 29);
-            this.textBox19.TabIndex = 35;
+            this.textBox19.TabIndex = 18;
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tmrFadeIn
@@ -636,17 +605,32 @@
             this.tmrFadeOut.Interval = 1;
             this.tmrFadeOut.Tick += new System.EventHandler(this.tmrFadeOut_Tick);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Window;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(116, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(391, 38);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "칠 판";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(623, 426);
+            this.ClientSize = new System.Drawing.Size(623, 407);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnInfo);
-            this.Controls.Add(this.btnTextSave);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnImageSave);
             this.Controls.Add(this.btnChangeSeat);
             this.Controls.Add(this.textBox19);
             this.Controls.Add(this.textBox20);
@@ -707,10 +691,8 @@
         #endregion
         private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.Button btnChangeSeat;
-        private System.Windows.Forms.Button btnImageSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.Button btnTextSave;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem;
@@ -758,6 +740,7 @@
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Timer tmrFadeIn;
         private System.Windows.Forms.Timer tmrFadeOut;
+        private System.Windows.Forms.Button button1;
     }
 }
 
