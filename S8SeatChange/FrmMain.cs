@@ -76,11 +76,10 @@ namespace S8SeatChange
         
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            var result = MessageBox.Show(
-                "자리 배치를 초기화하려면 예, 전에 저장된 배치를 불러오려면 아니오를 클릭해주세요.",
-                "S8SeatChange",
-                MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes) InitialText();
+            this.Focus();
+            btnChangeSeat.Focus();
+            if (!System.IO.File.Exists("Classmates.txt")) InitialText();
+            ApplytoTextbox();
             //MessageBox message = new MessageBox(2343, 52);
         }
         
@@ -110,18 +109,11 @@ namespace S8SeatChange
 
         private void FrmMain_MouseUp(object sender, MouseEventArgs e)
         {
+
             if (e.Button == MouseButtons.Left) isDrag = false;
         }
 
         /*==============================================*/
-
-        private void btnInitTxt_Click(object sender, EventArgs e) { InitialText(); }
-        
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (System.IO.File.Exists("Classmates.txt")) ApplytoTextbox();
-            else MessageBox.Show("저장된 배치가 없습니다!");
-        }
         
         private void btnChangeSeat_Click(object sender, EventArgs e)
         {
@@ -167,10 +159,7 @@ namespace S8SeatChange
             //textBox01~textBox36
             
             List<string> nameslist = new List<string>();
-            foreach (TextBox item in textBoxes)
-            {
-                nameslist.Add(item.Text);
-            }
+            foreach (TextBox item in textBoxes) { nameslist.Add(item.Text); }
             
             Random rnd = new Random();
             short i;
@@ -190,7 +179,6 @@ namespace S8SeatChange
                             break;
                         }
                         else isSame = false;
-
                     }
                     if (!isSame)
                     {
@@ -273,14 +261,7 @@ namespace S8SeatChange
                 else textBoxes[i].Text = string.Empty;
             }
         }
-
-
-
-
-
-
-
-
+        
         void SaveAsText()
         {
             List<TextBox> textBoxes = new List<TextBox>
@@ -330,6 +311,7 @@ namespace S8SeatChange
                 str += items.Text + "\n";
             }
             System.IO.File.WriteAllText("Classmates.txt", str);
+            MessageBox.Show("성공적으로 저장되었습니다.", "S8SeatChange", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -345,22 +327,63 @@ namespace S8SeatChange
 
         private void CloseForm(object sender, EventArgs e) { this.Close(); }
 
+
+        bool isClosing = false;
+        bool isAllowed = false;
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var result = MessageBox.Show("배치 저장은 하셨습니까?", "S8SeatChange", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
-            if (result == DialogResult.Yes) Application.Exit();
-            else e.Cancel=true;
+            if (!isAllowed)
+            {
+                isClosing = true;
+                var result = MessageBox.Show("정말로 종료하시겠습니까?", "S8SeatChange", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+                e.Cancel = true;
+                isClosing = false;
+                if (result == DialogResult.Yes) { tmrFadeOut.Enabled = true; }
+            }
         }
 
         private void btnOpen_Click(object sender, EventArgs e) { OpenText(); }
 
         private void 배치불러오기OToolStripMenuItem_Click(object sender, EventArgs e) { OpenText(); }
 
-        private void 배치초기화RToolStripMenuItem_Click(object sender, EventArgs e) { InitialText(); }
+        private void 배치초기화RToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InitialText();
+            ApplytoTextbox();
+        }
 
         private void 텍스트로저장SToolStripMenuItem_Click(object sender, EventArgs e) { SaveAsText(); }
 
         private void 이미지로저장IToolStripMenuItem_Click(object sender, EventArgs e) { SaveAsImage(); }
+
         
+        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        {
+            this.Opacity += 0.02;
+            if (this.Opacity == 1.0) { tmrFadeIn.Enabled = false; }
+        }
+        
+        private void FrmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!isClosing && e.KeyCode == Keys.Escape) this.Close();
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e) { btnInfo.Image = Properties.Resources.imgInfo_Full; }
+
+        private void button1_MouseUp(object sender, MouseEventArgs e) { btnInfo.Image = Properties.Resources.imgInfo; }
+
+        private void btnImageSave_Click(object sender, EventArgs e) { SaveAsImage(); }
+
+        private void ReOpen(object sender, EventArgs e) { OpenText(); }
+
+        private void tmrFadeOut_Tick(object sender, EventArgs e)
+        {
+            this.Opacity -= 0.02;
+            if (this.Opacity==0.0)
+            {
+                isAllowed = true;
+                Application.Exit();
+            }
+        }
     }
 }

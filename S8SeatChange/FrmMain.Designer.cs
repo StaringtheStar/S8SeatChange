@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.btnChangeSeat = new System.Windows.Forms.Button();
             this.btnImageSave = new System.Windows.Forms.Button();
-            this.btnInitTxt = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnTextSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInfo = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.배치초기화RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,6 +81,8 @@
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
+            this.tmrFadeIn = new System.Windows.Forms.Timer(this.components);
+            this.tmrFadeOut = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,10 +98,10 @@
             this.btnChangeSeat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnChangeSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeSeat.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnChangeSeat.Location = new System.Drawing.Point(215, 364);
+            this.btnChangeSeat.Location = new System.Drawing.Point(237, 364);
             this.btnChangeSeat.Name = "btnChangeSeat";
             this.btnChangeSeat.Size = new System.Drawing.Size(114, 38);
-            this.btnChangeSeat.TabIndex = 36;
+            this.btnChangeSeat.TabIndex = 0;
             this.btnChangeSeat.Text = "자리 바꾸기";
             this.btnChangeSeat.UseVisualStyleBackColor = false;
             this.btnChangeSeat.Click += new System.EventHandler(this.btnChangeSeat_Click);
@@ -111,27 +113,13 @@
             this.btnImageSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnImageSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImageSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnImageSave.Location = new System.Drawing.Point(476, 364);
+            this.btnImageSave.Location = new System.Drawing.Point(487, 364);
             this.btnImageSave.Name = "btnImageSave";
-            this.btnImageSave.Size = new System.Drawing.Size(135, 38);
+            this.btnImageSave.Size = new System.Drawing.Size(124, 38);
             this.btnImageSave.TabIndex = 37;
             this.btnImageSave.Text = "이미지로 저장";
             this.btnImageSave.UseVisualStyleBackColor = false;
-            // 
-            // btnInitTxt
-            // 
-            this.btnInitTxt.BackColor = System.Drawing.SystemColors.Control;
-            this.btnInitTxt.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.btnInitTxt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnInitTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInitTxt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnInitTxt.Location = new System.Drawing.Point(12, 364);
-            this.btnInitTxt.Name = "btnInitTxt";
-            this.btnInitTxt.Size = new System.Drawing.Size(83, 38);
-            this.btnInitTxt.TabIndex = 39;
-            this.btnInitTxt.Text = "초기화";
-            this.btnInitTxt.UseVisualStyleBackColor = false;
-            this.btnInitTxt.Click += new System.EventHandler(this.btnInitTxt_Click);
+            this.btnImageSave.Click += new System.EventHandler(this.btnImageSave_Click);
             // 
             // btnClose
             // 
@@ -147,9 +135,6 @@
             this.btnClose.TabIndex = 40;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.CloseForm);
-            this.btnClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseDown);
-            this.btnClose.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
-            this.btnClose.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseUp);
             // 
             // btnOpen
             // 
@@ -158,13 +143,13 @@
             this.btnOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpen.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.btnOpen.Location = new System.Drawing.Point(101, 364);
+            this.btnOpen.Location = new System.Drawing.Point(105, 364);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(108, 38);
+            this.btnOpen.Size = new System.Drawing.Size(126, 38);
             this.btnOpen.TabIndex = 41;
-            this.btnOpen.Text = "새로고침";
+            this.btnOpen.Text = "다시 불러오기";
             this.btnOpen.UseVisualStyleBackColor = false;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            this.btnOpen.Click += new System.EventHandler(this.ReOpen);
             // 
             // btnTextSave
             // 
@@ -173,30 +158,29 @@
             this.btnTextSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnTextSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTextSave.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.btnTextSave.Location = new System.Drawing.Point(335, 364);
+            this.btnTextSave.Location = new System.Drawing.Point(357, 364);
             this.btnTextSave.Name = "btnTextSave";
-            this.btnTextSave.Size = new System.Drawing.Size(135, 38);
+            this.btnTextSave.Size = new System.Drawing.Size(124, 38);
             this.btnTextSave.TabIndex = 43;
             this.btnTextSave.Text = "텍스트로 저장";
             this.btnTextSave.UseVisualStyleBackColor = false;
             this.btnTextSave.Click += new System.EventHandler(this.TextSave);
             // 
-            // button1
+            // btnInfo
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(498, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 44;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseDown);
-            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
-            this.button1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseUp);
+            this.btnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnInfo.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnInfo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
+            this.btnInfo.Location = new System.Drawing.Point(487, 0);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(40, 40);
+            this.btnInfo.TabIndex = 44;
+            this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.btnInfo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
             // 
             // menu
             // 
@@ -641,17 +625,27 @@
             this.textBox19.TabIndex = 35;
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tmrFadeIn
+            // 
+            this.tmrFadeIn.Enabled = true;
+            this.tmrFadeIn.Interval = 1;
+            this.tmrFadeIn.Tick += new System.EventHandler(this.tmrFadeIn_Tick);
+            // 
+            // tmrFadeOut
+            // 
+            this.tmrFadeOut.Interval = 1;
+            this.tmrFadeOut.Tick += new System.EventHandler(this.tmrFadeOut_Tick);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(623, 426);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnTextSave);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnInitTxt);
             this.Controls.Add(this.btnImageSave);
             this.Controls.Add(this.btnChangeSeat);
             this.Controls.Add(this.textBox19);
@@ -693,10 +687,13 @@
             this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = global::S8SeatChange.Properties.Resources.S8;
+            this.KeyPreview = true;
             this.Name = "FrmMain";
+            this.Opacity = 0D;
             this.Text = "S8";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseUp);
@@ -711,11 +708,10 @@
         private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.Button btnChangeSeat;
         private System.Windows.Forms.Button btnImageSave;
-        private System.Windows.Forms.Button btnInitTxt;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnTextSave;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 배치초기화RToolStripMenuItem;
@@ -760,6 +756,8 @@
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Timer tmrFadeIn;
+        private System.Windows.Forms.Timer tmrFadeOut;
     }
 }
 
