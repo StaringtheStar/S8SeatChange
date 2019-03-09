@@ -187,9 +187,7 @@ namespace S8SeatChange
                     }
                 }
             }
-
             for (i = 0; i < 36; i++) textBoxes[i].Text = nameslist[order[i]];
-            
         }
 
         private void TextSave(object sender, EventArgs e) { SaveAsText(); }
@@ -384,6 +382,16 @@ namespace S8SeatChange
                 isAllowed = true;
                 Application.Exit();
             }
+        }
+
+        private void 도움말HToolStripMenuItem_Click(object sender, EventArgs e){ FormHelpOpen(); }
+
+        private void btnInfo_Click(object sender, EventArgs e) { FormHelpOpen();  }
+
+        void FormHelpOpen()
+        {
+            FrmHelp Help = new FrmHelp();
+            Help.Show();
         }
     }
 }
