@@ -1,4 +1,4 @@
-# S8SeatChange V 0.1
+# S8SeatChange V 1.0
 
 -------
 ##### Made by 이준모(20190305~20190311)
