@@ -94,11 +94,11 @@
             // 
             // btnChangeSeat
             // 
-            this.btnChangeSeat.BackColor = System.Drawing.SystemColors.Control;
-            this.btnChangeSeat.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.btnChangeSeat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnChangeSeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnChangeSeat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(27)))), ((int)(((byte)(146)))));
+            this.btnChangeSeat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
             this.btnChangeSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeSeat.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnChangeSeat.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnChangeSeat.Location = new System.Drawing.Point(474, 349);
             this.btnChangeSeat.Name = "btnChangeSeat";
             this.btnChangeSeat.Size = new System.Drawing.Size(114, 38);
@@ -124,11 +124,11 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.BackColor = System.Drawing.SystemColors.Control;
+            this.btnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnOpen.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.btnOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpen.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.btnOpen.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOpen.Location = new System.Drawing.Point(342, 349);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(126, 38);
@@ -239,7 +239,7 @@
             // 
             // textBox01
             // 
-            this.textBox01.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox01.BackColor = System.Drawing.Color.White;
             this.textBox01.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox01.Location = new System.Drawing.Point(0, 58);
             this.textBox01.MaxLength = 5;
@@ -250,6 +250,7 @@
             // 
             // textBox02
             // 
+            this.textBox02.BackColor = System.Drawing.Color.White;
             this.textBox02.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox02.Location = new System.Drawing.Point(81, 58);
             this.textBox02.MaxLength = 5;
@@ -260,6 +261,7 @@
             // 
             // textBox03
             // 
+            this.textBox03.BackColor = System.Drawing.Color.White;
             this.textBox03.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox03.Location = new System.Drawing.Point(162, 58);
             this.textBox03.MaxLength = 5;
@@ -270,6 +272,7 @@
             // 
             // textBox04
             // 
+            this.textBox04.BackColor = System.Drawing.Color.White;
             this.textBox04.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox04.Location = new System.Drawing.Point(0, 93);
             this.textBox04.MaxLength = 5;
@@ -280,6 +283,7 @@
             // 
             // textBox05
             // 
+            this.textBox05.BackColor = System.Drawing.Color.White;
             this.textBox05.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox05.Location = new System.Drawing.Point(81, 93);
             this.textBox05.MaxLength = 5;
@@ -290,6 +294,7 @@
             // 
             // textBox06
             // 
+            this.textBox06.BackColor = System.Drawing.Color.White;
             this.textBox06.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox06.Location = new System.Drawing.Point(162, 93);
             this.textBox06.MaxLength = 5;
@@ -300,6 +305,7 @@
             // 
             // textBox07
             // 
+            this.textBox07.BackColor = System.Drawing.Color.White;
             this.textBox07.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox07.Location = new System.Drawing.Point(0, 128);
             this.textBox07.MaxLength = 5;
@@ -310,6 +316,7 @@
             // 
             // textBox08
             // 
+            this.textBox08.BackColor = System.Drawing.Color.White;
             this.textBox08.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox08.Location = new System.Drawing.Point(81, 128);
             this.textBox08.MaxLength = 5;
@@ -320,6 +327,7 @@
             // 
             // textBox09
             // 
+            this.textBox09.BackColor = System.Drawing.Color.White;
             this.textBox09.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox09.Location = new System.Drawing.Point(162, 128);
             this.textBox09.MaxLength = 5;
@@ -330,6 +338,7 @@
             // 
             // textBox10
             // 
+            this.textBox10.BackColor = System.Drawing.Color.White;
             this.textBox10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox10.Location = new System.Drawing.Point(0, 163);
             this.textBox10.MaxLength = 5;
@@ -340,6 +349,7 @@
             // 
             // textBox11
             // 
+            this.textBox11.BackColor = System.Drawing.Color.White;
             this.textBox11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox11.Location = new System.Drawing.Point(81, 163);
             this.textBox11.MaxLength = 5;
@@ -350,6 +360,7 @@
             // 
             // textBox12
             // 
+            this.textBox12.BackColor = System.Drawing.Color.White;
             this.textBox12.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox12.Location = new System.Drawing.Point(162, 163);
             this.textBox12.MaxLength = 5;
@@ -360,6 +371,7 @@
             // 
             // textBox15
             // 
+            this.textBox15.BackColor = System.Drawing.Color.White;
             this.textBox15.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox15.Location = new System.Drawing.Point(162, 198);
             this.textBox15.MaxLength = 5;
@@ -370,6 +382,7 @@
             // 
             // textBox14
             // 
+            this.textBox14.BackColor = System.Drawing.Color.White;
             this.textBox14.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox14.Location = new System.Drawing.Point(81, 198);
             this.textBox14.MaxLength = 5;
@@ -380,6 +393,7 @@
             // 
             // textBox13
             // 
+            this.textBox13.BackColor = System.Drawing.Color.White;
             this.textBox13.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox13.Location = new System.Drawing.Point(0, 198);
             this.textBox13.MaxLength = 5;
@@ -390,6 +404,7 @@
             // 
             // textBox18
             // 
+            this.textBox18.BackColor = System.Drawing.Color.White;
             this.textBox18.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox18.Location = new System.Drawing.Point(162, 233);
             this.textBox18.MaxLength = 5;
@@ -400,6 +415,7 @@
             // 
             // textBox17
             // 
+            this.textBox17.BackColor = System.Drawing.Color.White;
             this.textBox17.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox17.Location = new System.Drawing.Point(81, 233);
             this.textBox17.MaxLength = 5;
@@ -410,6 +426,7 @@
             // 
             // textBox16
             // 
+            this.textBox16.BackColor = System.Drawing.Color.White;
             this.textBox16.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox16.Location = new System.Drawing.Point(0, 233);
             this.textBox16.MaxLength = 5;
@@ -420,6 +437,7 @@
             // 
             // textBox36
             // 
+            this.textBox36.BackColor = System.Drawing.Color.White;
             this.textBox36.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox36.Location = new System.Drawing.Point(478, 233);
             this.textBox36.MaxLength = 5;
@@ -430,6 +448,7 @@
             // 
             // textBox35
             // 
+            this.textBox35.BackColor = System.Drawing.Color.White;
             this.textBox35.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox35.Location = new System.Drawing.Point(397, 233);
             this.textBox35.MaxLength = 5;
@@ -440,6 +459,7 @@
             // 
             // textBox34
             // 
+            this.textBox34.BackColor = System.Drawing.Color.White;
             this.textBox34.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox34.Location = new System.Drawing.Point(316, 233);
             this.textBox34.MaxLength = 5;
@@ -450,6 +470,7 @@
             // 
             // textBox33
             // 
+            this.textBox33.BackColor = System.Drawing.Color.White;
             this.textBox33.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox33.Location = new System.Drawing.Point(478, 198);
             this.textBox33.MaxLength = 5;
@@ -460,6 +481,7 @@
             // 
             // textBox32
             // 
+            this.textBox32.BackColor = System.Drawing.Color.White;
             this.textBox32.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox32.Location = new System.Drawing.Point(397, 198);
             this.textBox32.MaxLength = 5;
@@ -470,6 +492,7 @@
             // 
             // textBox31
             // 
+            this.textBox31.BackColor = System.Drawing.Color.White;
             this.textBox31.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox31.Location = new System.Drawing.Point(316, 198);
             this.textBox31.MaxLength = 5;
@@ -480,6 +503,7 @@
             // 
             // textBox30
             // 
+            this.textBox30.BackColor = System.Drawing.Color.White;
             this.textBox30.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox30.Location = new System.Drawing.Point(478, 163);
             this.textBox30.MaxLength = 5;
@@ -490,6 +514,7 @@
             // 
             // textBox29
             // 
+            this.textBox29.BackColor = System.Drawing.Color.White;
             this.textBox29.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox29.Location = new System.Drawing.Point(397, 163);
             this.textBox29.MaxLength = 5;
@@ -500,6 +525,7 @@
             // 
             // textBox28
             // 
+            this.textBox28.BackColor = System.Drawing.Color.White;
             this.textBox28.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox28.Location = new System.Drawing.Point(316, 163);
             this.textBox28.MaxLength = 5;
@@ -510,6 +536,7 @@
             // 
             // textBox27
             // 
+            this.textBox27.BackColor = System.Drawing.Color.White;
             this.textBox27.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox27.Location = new System.Drawing.Point(478, 128);
             this.textBox27.MaxLength = 5;
@@ -520,6 +547,7 @@
             // 
             // textBox26
             // 
+            this.textBox26.BackColor = System.Drawing.Color.White;
             this.textBox26.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox26.Location = new System.Drawing.Point(397, 128);
             this.textBox26.MaxLength = 5;
@@ -530,6 +558,7 @@
             // 
             // textBox25
             // 
+            this.textBox25.BackColor = System.Drawing.Color.White;
             this.textBox25.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox25.Location = new System.Drawing.Point(316, 128);
             this.textBox25.MaxLength = 5;
@@ -540,6 +569,7 @@
             // 
             // textBox24
             // 
+            this.textBox24.BackColor = System.Drawing.Color.White;
             this.textBox24.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox24.Location = new System.Drawing.Point(478, 93);
             this.textBox24.MaxLength = 5;
@@ -550,6 +580,7 @@
             // 
             // textBox23
             // 
+            this.textBox23.BackColor = System.Drawing.Color.White;
             this.textBox23.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox23.Location = new System.Drawing.Point(397, 93);
             this.textBox23.MaxLength = 5;
@@ -560,6 +591,7 @@
             // 
             // textBox22
             // 
+            this.textBox22.BackColor = System.Drawing.Color.White;
             this.textBox22.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox22.Location = new System.Drawing.Point(316, 93);
             this.textBox22.MaxLength = 5;
@@ -570,6 +602,7 @@
             // 
             // textBox21
             // 
+            this.textBox21.BackColor = System.Drawing.Color.White;
             this.textBox21.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox21.Location = new System.Drawing.Point(478, 58);
             this.textBox21.MaxLength = 5;
@@ -580,6 +613,7 @@
             // 
             // textBox20
             // 
+            this.textBox20.BackColor = System.Drawing.Color.White;
             this.textBox20.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox20.Location = new System.Drawing.Point(397, 58);
             this.textBox20.MaxLength = 5;
@@ -590,6 +624,7 @@
             // 
             // textBox19
             // 
+            this.textBox19.BackColor = System.Drawing.Color.White;
             this.textBox19.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox19.Location = new System.Drawing.Point(316, 58);
             this.textBox19.MaxLength = 5;
@@ -611,11 +646,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.BackColor = System.Drawing.Color.LavenderBlush;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Window;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Location = new System.Drawing.Point(81, 0);
@@ -680,7 +715,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(203)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(623, 407);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnOpen);

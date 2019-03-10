@@ -101,8 +101,7 @@ namespace S8SeatChange
         {
             if (isDrag)
             {
-                Point temp = new Point(this.Location.X + e.Location.X - mousePos.X, this.Location.Y + e.Location.Y - mousePos.Y);
-                this.Location = temp;
+                this.Location= new Point(this.Location.X + e.Location.X - mousePos.X, this.Location.Y + e.Location.Y - mousePos.Y);
             }
 
         }
@@ -377,7 +376,7 @@ namespace S8SeatChange
         private void tmrFadeOut_Tick(object sender, EventArgs e)
         {
             this.Opacity -= 0.02;
-            if (this.Opacity==0.0)
+            if (this.Opacity<=0.0)
             {
                 isAllowed = true;
                 Application.Exit();
