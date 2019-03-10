@@ -79,7 +79,7 @@ namespace S8SeatChange
             this.Focus();
             //btnChangeSeat.Focus();
             if (!System.IO.File.Exists("Classmates.txt")) InitialText();
-            ApplytoTextbox();
+            ApplytoTextbox(null);
             //MessageBox message = new MessageBox(2343, 52);
         }
         
@@ -203,12 +203,13 @@ namespace S8SeatChange
 
         void OpenText()
         {
-            if (System.IO.File.Exists("Classmates.txt")) ApplytoTextbox();
+            if (System.IO.File.Exists("Classmates.txt")) ApplytoTextbox(null);
             else MessageBox.Show("저장된 배치가 없습니다!", "S8SeatChange", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        void ApplytoTextbox()
+        void ApplytoTextbox(string filename)
         {
+            if (filename == null) filename = "Classmates.txt";
             List<TextBox> textBoxes = new List<TextBox>
             {
                 textBox01,
@@ -249,13 +250,22 @@ namespace S8SeatChange
                 textBox36
             };
             //textBox01~textBox36
-
-            string[] str = System.IO.File.ReadAllText("Classmates.txt").Split('\n');
-            short i;
-            for (i = 0; i < 36; i++)
+            try
             {
-                if (str[i] != String.Empty) textBoxes[i].Text = str[i];
-                else textBoxes[i].Text = string.Empty;
+                string[] str = System.IO.File.ReadAllText(filename).Split('\n');
+                short i;
+                for (i = 0; i < 36; i++)
+                {
+                    if (str[i] != String.Empty) textBoxes[i].Text = str[i];
+                    else textBoxes[i].Text = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("에러가 발생하였습니다. 배치를 초기화합니다." + Environment.NewLine +
+                    "이 창을 캡쳐해서 개발자에게 메일로 보내주세면 과자를 얻을 수 있습니다." +
+                    Environment.NewLine + ex.ToString());
+                InitialText();
             }
         }
         
@@ -301,25 +311,57 @@ namespace S8SeatChange
                 textBox36
             };
             //textBox01~textBox36
-
-            string str = string.Empty;
-            foreach (TextBox items in textBoxes)
+            try
             {
-                str += items.Text + "\n";
+                string str = string.Empty;
+                foreach (TextBox items in textBoxes)
+                {
+                    str += items.Text + "\n";
+                }
+                System.IO.File.WriteAllText("Classmates.txt", str);
+                MessageBox.Show("성공적으로 저장되었습니다.", "S8SeatChange", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            System.IO.File.WriteAllText("Classmates.txt", str);
-            MessageBox.Show("성공적으로 저장되었습니다.", "S8SeatChange", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("에러가 발생하였습니다. 다시 한 번 시도해주세요." + Environment.NewLine +
+                    "이 창을 캡쳐해서 개발자에게 메일로 보내주세면 과자를 얻을 수 있습니다." +
+                    Environment.NewLine + ex.ToString());
+            }
         }
 
         void SaveAsImage()
         {
-
-
-
-
-
-
+            menu.Visible = false;
+            btnRefresh.Visible = false;
+            btnChangeSeat.Visible = false;
+            btnInfo.Visible = false;
+            btnClose.Visible = false;
+            this.Size = new Size(panel1.Size.Width + 70, panel1.Size.Height + 70);
+            panel1.Location = new Point(35, 35);
+            var image = ScreenCapture.CaptureActiveWindow();
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != string.Empty)
+            {
+                switch (saveFileDialog1.FilterIndex)
+                {
+                    case 1:
+                        image.Save(saveFileDialog1.FileName, ImageFormat.Jpeg);
+                        MessageBox.Show("이미지 파일로 저장하였습니다.");
+                        break;
+                    case 2:
+                        image.Save(saveFileDialog1.FileName, ImageFormat.Png);
+                        MessageBox.Show("이미지 파일로 저장하였습니다.");
+                        break;
+                }
+            }
+            else { MessageBox.Show("다시 한 번 지정해주세요."); }
+            this.Size = new Size(623, 407);
+            panel1.Location = new Point(35, 62);
+            menu.Visible = true;
+            btnRefresh.Visible = true;
+            btnChangeSeat.Visible = true;
+            btnInfo.Visible = true;
+            btnClose.Visible = true;
         }
 
         private void CloseForm(object sender, EventArgs e) { this.Close(); }
@@ -341,12 +383,29 @@ namespace S8SeatChange
 
         private void btnOpen_Click(object sender, EventArgs e) { OpenText(); }
 
-        private void 배치불러오기OToolStripMenuItem_Click(object sender, EventArgs e) { OpenText(); }
+        private void 배치불러오기OToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            
+                try
+                {
+                    ApplytoTextbox(openFileDialog1.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("에러가 발생하였습니다. 다시 한 번 시도해주세요." + Environment.NewLine +
+                       "이 창을 캡쳐해서 개발자에게 메일로 보내주세면 과자를 얻을 수 있습니다." +
+                       Environment.NewLine + ex.ToString());
+                }
+
+            
+
+        }
 
         private void 배치초기화RToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InitialText();
-            ApplytoTextbox();
+            ApplytoTextbox(null);
         }
 
         private void 텍스트로저장SToolStripMenuItem_Click(object sender, EventArgs e) { SaveAsText(); }
@@ -363,6 +422,13 @@ namespace S8SeatChange
         private void FrmMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (!isClosing && e.KeyCode == Keys.Escape) this.Close();
+            else if (e.KeyCode == Keys.S && e.Modifiers == Keys.Control)
+            {
+                var result = MessageBox.Show("텍스트로 저장하시겠다면 \"예\"를, 이미지로 저장하시겠다면 \"아니오\"를 클릭해주세요.", "S8SeatChange", MessageBoxButtons.YesNoCancel);
+                if (result == DialogResult.Yes) SaveAsText();
+                else if (result == DialogResult.No) SaveAsImage();
+            }
+            else if (e.KeyCode==Keys.Q && (e.Modifiers==Keys.Control || e.Modifiers == Keys.Alt)) { this.Close(); }
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e) { btnInfo.Image = Properties.Resources.imgInfo_Full; }
@@ -392,5 +458,6 @@ namespace S8SeatChange
             FrmHelp Help = new FrmHelp();
             Help.Show();
         }
+        
     }
 }

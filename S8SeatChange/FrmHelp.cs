@@ -47,7 +47,9 @@ namespace S8SeatChange
             try { System.Diagnostics.Process.Start(linkLabel1.Text); }
             catch (Exception ex)
             {
-                MessageBox.Show("에러가 발생하였습니다. 이 창을 캡쳐해서 개발자에게 메일로 보내주세면 과자를 얻을 수 있습니다." + Environment.NewLine + ex.ToString());
+                MessageBox.Show("에러가 발생하였습니다." + Environment.NewLine + 
+                    "이 창을 캡쳐해서 개발자에게 메일로 보내주세면 과자를 얻을 수 있습니다."
+                    + Environment.NewLine + ex.ToString());
             }
         }
 
@@ -82,6 +84,34 @@ namespace S8SeatChange
                 e.Cancel = true;
                 isAllowed = true;
                 tmrFadeOut.Enabled = true;
+            }
+        }
+
+        private void FrmHelp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) this.Close();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try { System.Diagnostics.Process.Start("https://www.flaticon.com/authors/cursor-creative"); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("에러가 발생하였습니다." + Environment.NewLine +
+                    "이 창을 캡쳐해서 개발자에게 메일로 보내주세면 과자를 얻을 수 있습니다." +
+                    Environment.NewLine + ex.ToString());
+            }
+            
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try { System.Diagnostics.Process.Start("https://www.flaticon.com/"); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("에러가 발생하였습니다." + Environment.NewLine +
+                    "이 창을 캡쳐해서 개발자에게 메일로 보내주세면 과자를 얻을 수 있습니다." +
+                    Environment.NewLine + ex.ToString());
             }
         }
     }

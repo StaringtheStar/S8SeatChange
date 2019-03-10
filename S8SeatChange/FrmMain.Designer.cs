@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.btnChangeSeat = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,20 +82,17 @@
             this.tmrFadeOut = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // openFile
-            // 
-            this.openFile.Filter = "텍스트 파일(*.txt)|*.txt";
-            this.openFile.Title = "S8";
             // 
             // btnChangeSeat
             // 
             this.btnChangeSeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnChangeSeat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(27)))), ((int)(((byte)(146)))));
-            this.btnChangeSeat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.btnChangeSeat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(183)))), ((int)(((byte)(229)))));
             this.btnChangeSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeSeat.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnChangeSeat.Location = new System.Drawing.Point(474, 349);
@@ -122,20 +118,20 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.CloseForm);
             // 
-            // btnOpen
+            // btnRefresh
             // 
-            this.btnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnOpen.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.btnOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpen.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnOpen.Location = new System.Drawing.Point(342, 349);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(126, 38);
-            this.btnOpen.TabIndex = 39;
-            this.btnOpen.Text = "다시 불러오기";
-            this.btnOpen.UseVisualStyleBackColor = false;
-            this.btnOpen.Click += new System.EventHandler(this.ReOpen);
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRefresh.Location = new System.Drawing.Point(354, 349);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(114, 38);
+            this.btnRefresh.TabIndex = 39;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.ReOpen);
             // 
             // btnInfo
             // 
@@ -649,8 +645,7 @@
             this.button1.BackColor = System.Drawing.Color.LavenderBlush;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LavenderBlush;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Location = new System.Drawing.Point(81, 0);
@@ -711,6 +706,19 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseUp);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileName = "Classmates.jpg";
+            this.saveFileDialog1.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png";
+            this.saveFileDialog1.InitialDirectory = "System.Windows.Forms.Application.StartupPath";
+            this.saveFileDialog1.Title = "그림으로 저장";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "Classmates.txt";
+            this.openFileDialog1.Filter = "텍스트 파일(*.txt)|*.txt|모든 파일(*.*)|*.*";
+            this.openFileDialog1.InitialDirectory = "System.Windows.Forms.Application.StartupPath";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -718,7 +726,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(203)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(623, 407);
             this.Controls.Add(this.btnInfo);
-            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnChangeSeat);
             this.Controls.Add(this.menu);
@@ -729,6 +737,7 @@
             this.Name = "FrmMain";
             this.Opacity = 0D;
             this.Text = "S8";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
@@ -744,10 +753,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.Button btnChangeSeat;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem;
@@ -797,6 +805,8 @@
         private System.Windows.Forms.Timer tmrFadeOut;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
