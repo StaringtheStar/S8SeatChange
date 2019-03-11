@@ -46,6 +46,6 @@ Ctrl + S를 누르면 텍스트 또는 이미지로 저장할 수 있다.
   - 등등등
 
 ## About
-  기획: 최종민 선생님(redcard@cnsa.hs.kr)
-  개발: 2-S8 이준모(staringthestar@gmail.com)
+  기획: 최종민 선생님(redcard@cnsa.hs.kr)  
+  개발: 2-S8 이준모(staringthestar@gmail.com)  
   디자인 조언: 2-A4 박지원(parkgiwon050@gmail.com)
