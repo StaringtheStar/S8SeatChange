@@ -86,10 +86,10 @@
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(403, 57);
+            this.label2.Size = new System.Drawing.Size(403, 76);
             this.label2.TabIndex = 2;
-            this.label2.Text = "CNSA 2-S8의 좌석을 바꾸기 위해서 만들어진 프로그램입니다.\r\n개발 기간: 약 6일(2019/03/05~2019/03/10)\r\n개발과 관련된" +
-    " 사항은 GitHub를 참조해주세요.";
+            this.label2.Text = "CNSA 2-S8의 좌석을 바꾸기 위해서 만들어진 프로그램입니다.\r\n개발 기간: ~V 1.0   약 7일(2019/03/05~2019/03/11)" +
+    "\r\n              V 1.0~   2019/03/11~\r\n개발과 관련된 사항은 GitHub를 참조해주세요.";
             this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmHelp_MouseDown);
             this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmHelp_MouseMove);
             this.label2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmHelp_MouseUp);
@@ -99,7 +99,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.linkLabel1.Location = new System.Drawing.Point(3, 59);
+            this.linkLabel1.Location = new System.Drawing.Point(3, 78);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(273, 15);
             this.linkLabel1.TabIndex = 3;
@@ -110,12 +110,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 38);
+            this.label3.Location = new System.Drawing.Point(35, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(271, 60);
+            this.label3.Size = new System.Drawing.Size(311, 60);
             this.label3.TabIndex = 4;
             this.label3.Text = "기획: 최종민 선생님(redcard@cnsa.hs.kr)\r\n\r\n개발: 181052 이준모(staringthestar@gmail.com)\r\n\r\n디자" +
-    "인 조언: 182134 박지원";
+    "인 조언: 182134 박지원(parkgiwon050@gmail.com)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmHelp_MouseDown);
             this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmHelp_MouseMove);
@@ -135,11 +135,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(415, 85);
+            this.panel1.Size = new System.Drawing.Size(415, 101);
             this.panel1.TabIndex = 5;
             // 
             // pictureBox1
@@ -215,7 +215,6 @@
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.Text = "S8SeatChange";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmHelp_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmHelp_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmHelp_MouseDown);

@@ -84,6 +84,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.개발자181052이준모ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -158,7 +159,8 @@
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.파일ToolStripMenuItem,
             this.저장SToolStripMenuItem,
-            this.도움말HToolStripMenuItem});
+            this.도움말HToolStripMenuItem,
+            this.개발자181052이준모ToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(623, 40);
@@ -719,6 +721,12 @@
             this.openFileDialog1.Filter = "텍스트 파일(*.txt)|*.txt|모든 파일(*.*)|*.*";
             this.openFileDialog1.InitialDirectory = "System.Windows.Forms.Application.StartupPath";
             // 
+            // 개발자181052이준모ToolStripMenuItem
+            // 
+            this.개발자181052이준모ToolStripMenuItem.Name = "개발자181052이준모ToolStripMenuItem";
+            this.개발자181052이준모ToolStripMenuItem.Size = new System.Drawing.Size(144, 36);
+            this.개발자181052이준모ToolStripMenuItem.Text = "개발자: 181052 이준모";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -737,7 +745,6 @@
             this.Name = "FrmMain";
             this.Opacity = 0D;
             this.Text = "S8";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
@@ -807,6 +814,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem 개발자181052이준모ToolStripMenuItem;
     }
 }
 

@@ -7,7 +7,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace S8SeatChange
@@ -338,19 +338,22 @@ namespace S8SeatChange
             btnClose.Visible = false;
             this.Size = new Size(panel1.Size.Width + 70, panel1.Size.Height + 70);
             panel1.Location = new Point(35, 35);
-            var image = ScreenCapture.CaptureActiveWindow();
             saveFileDialog1.ShowDialog();
+            Thread.Sleep(500);
+            this.Focus();
+            var image = ScreenCapture.CaptureActiveWindow();
+            
             if (saveFileDialog1.FileName != string.Empty)
             {
                 switch (saveFileDialog1.FilterIndex)
                 {
                     case 1:
                         image.Save(saveFileDialog1.FileName, ImageFormat.Jpeg);
-                        MessageBox.Show("이미지 파일로 저장하였습니다.");
+                        MessageBox.Show("JPG 파일로 저장하였습니다.", "S8SeatChange");
                         break;
                     case 2:
                         image.Save(saveFileDialog1.FileName, ImageFormat.Png);
-                        MessageBox.Show("이미지 파일로 저장하였습니다.");
+                        MessageBox.Show("PNG 파일로 저장되었습니다.", "S8SeatChange");
                         break;
                 }
             }
@@ -363,10 +366,9 @@ namespace S8SeatChange
             btnInfo.Visible = true;
             btnClose.Visible = true;
         }
-
+        
         private void CloseForm(object sender, EventArgs e) { this.Close(); }
-
-
+        
         bool isClosing = false;
         bool isAllowed = false;
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -458,6 +460,7 @@ namespace S8SeatChange
             FrmHelp Help = new FrmHelp();
             Help.Show();
         }
+
         
     }
 }
